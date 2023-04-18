@@ -7,6 +7,7 @@ import useUserContext from "./utils/user.context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
+import Register from "./pages/register";
 
 import { ToastContainer } from "react-toastify";
 
@@ -24,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {Guard(Login, "/", { unAuthRequire: true })}
-          {/* {Guard(Login, "/login", { unAuthRequire: true })} */}
+          {Guard(Register, "/register", { unAuthRequire: true })}
           {Guard(Dashboard, "/dashboard", { authRequire: true })}
         </Routes>
       </BrowserRouter>
